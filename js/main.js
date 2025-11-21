@@ -1,7 +1,9 @@
 
 
+
 (() => {
   gsap.registerPlugin(ScrollTrigger);
+
   const hotspots = document.querySelectorAll(".Hotspot");
   const infoBoxes = [
     {
@@ -13,14 +15,18 @@
     {
       image: "images/spiker.png",
       title: "Spiker",
-      text: "360 Audio places sound all around you, while Dolby Head Tracking™ technology delivers an incredible three-dimensional listening experience.",
-      alt: "air icon",
+
+       text: "360 Audio places sound all around you, while Dolby Head Tracking™ technology delivers an incredible three-dimensional listening experience.",
+       alt: "air icon",
+
     },
     {
       image: "images/Bluetooth-antenna.png",
       title: "Bluetooth antenna",
-      text: "Wiyer less Bluetooth 5.0 technology for a strong and stable connection up to 33 feet and lossless audio support.",
-      alt: "air icon",
+
+       text: "Wiyer less Bluetooth 5.0 technology for a strong and stable connection up to 33 feet and lossless audio support.",
+       alt: "air icon",
+
     },
     {
       image: "images/spiker.png",
@@ -30,45 +36,33 @@
     },
   ];
 
+  //Array Functions
   function loadInfo() {
     infoBoxes.forEach((infoBox, index) => {
-      let selected = document.querySelector(`#hotspot-${index + 1}`);
-      
-      const image = document.createElement('img');
-      const title = document.createElement('h2');
-      const info = document.createElement('p');
-
-      image.src = infoBox.image;
-      title.textContent = infoBox.title;
-      info.textContent = infoBox.text;
-
-      selected.appendChild(image);
-      selected.appendChild(title);
-      selected.appendChild(info);
-    })
-  }
-
-  // Functions
-  function loadInfo() {
-    infoBoxes.forEach((infoBox, index) => {
+      //console.log(index+1);
       let selected = document.querySelector(`#hotspot-${index + 1}`);
       console.log(selected);
 
-      const image = document.createElement("img");
-      image.src = infoBox.image;
-      image.alt = infoBox.alt;
+      const imageElement = document.createElement("img");
+      imageElement.src = infoBox.image;
+      imageElement.alt = infoBox.alt;
 
-      selected.appendChild(image);
+      selected.appendChild(imageElement);
+      //Create h2 in JS
       const titleElement = document.createElement("h2");
 
+      //Add text in h2
       titleElement.textContent = infoBox.title;
 
+      //Apply it
       selected.appendChild(titleElement);
 
+      //Create text in JS
       const textElement = document.createElement("p");
 
-    
+      //Add text in text
       textElement.textContent = infoBox.text;
+
 
       selected.appendChild(textElement);
     });
@@ -79,13 +73,20 @@
   //Functions
 
   function showInfo() {
-    
+
+    //console.log(this.slot);
+    //console.log(`#${this.slot}`);
+    //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
+
     let selected = document.querySelector(`#${this.slot}`);
     gsap.to(selected, { duration: 1, autoAlpha: 1 });
   }
 
   function hideInfo() {
-    
+
+    //console.log(this.slot);
+    //console.log(`#${this.slot}`);
+
     let selected = document.querySelector(`#${this.slot}`);
     gsap.to(selected, { duration: 1, autoAlpha: 0 });
   }
@@ -94,6 +95,7 @@
     hotspot.addEventListener("mouseenter", showInfo);
     hotspot.addEventListener("mouseleave", hideInfo);
   });
+
   function greed() {
 
     const textinfo = document.querySelector("#text-info");
@@ -194,4 +196,5 @@
     window.addEventListener("load", resetSlider);
 
 })();
+
 
