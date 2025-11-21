@@ -1,97 +1,92 @@
-/* --------------------
-   NAVBAR HEADER
--------------------- */
-.nav-header {
-  width: 100%;
-  height: 70px;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
+
+ul, li {
+    margin: 0;
+    padding: 0;
 }
 
-.nav-brand img {
-  height: 40px;
-}
+header {
+    padding: 20px;
+    background: linear-gradient(0deg, black 0%, black 100%);
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #hamburger, #close {
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: right;
+    justify-content: end;
 
-.header-links ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
+   }
 
-.header-links ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.header-links ul li a:hover {
-  color: gray;
-}
-
-/* Burger icon */
-.nav-header .fa-bars {
-  display: none;
-  cursor: pointer;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .header-links {
+  
+  .overlay {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    justify-content: center;
+    align-items: center;
   }
-  .nav-header .fa-bars {
-    display: block;
+  
+  .overlay.open {
+    display: flex;
   }
+  
+  #close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .overlay ul {
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .overlay li {
+    margin: 20px 0;
+  }
+  
+  .overlay a {
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+  }
+  
+  .overlay a:hover {
+    color: #60c383;
+  }
+
+  .hidden{
+    display: none;  
 }
 
-
-/* --------------------
-   SIDEBAR SLIDER
--------------------- */
-.nav-screen {
-  height: 100%;
-  width: 285px;
-  background: #111;
-  position: fixed;
-  top: 0;
-  right: -285px;
-  z-index: 9999;
-  transition: right 0.3s ease;
-  padding: 50px 20px;
-}
-
-.nav-screen .fa-times {
-  color: #fff;
-  cursor: pointer;
+.nav-brand {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  left: 40px;
+  img{
+    width: 50px;
+    height: auto;
+    }
 }
 
-.nav-links ul {
-  list-style: none;
-  padding: 80px 0 0;
+.Image-header {
+    width: 100%;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
 }
 
-.nav-links ul li {
-  margin: 20px 0;
-}
-
-.nav-links ul li a {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links ul li a:hover {
-  color: #ff6363;
+#hero {
+    margin-top: 3px;
 }
