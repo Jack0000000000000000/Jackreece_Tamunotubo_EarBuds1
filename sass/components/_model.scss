@@ -1,0 +1,161 @@
+//mobile//
+model-viewer {
+  width: auto;
+  max-width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+.Hotspot {
+  visibility: hidden;
+  background: url(../images/hotspot.svg) center no-repeat;
+  border: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: all 1s ease-in-out;
+    animation-name: fill-bar;
+    animation-duration: 3s; 
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite; 
+    &:hover {
+      animation-play-state: paused; 
+  }
+}
+
+
+ @keyframes fill-bar {
+  from {
+    width: 0;
+  }
+  to {
+    /* Use the custom property to set the final width */
+    width: 40px;
+  }
+}
+
+.Hotspot:not([data-visible]) {
+  opacity: 0;
+  width: 20px;
+  height: 11px;
+  pointer-events: none;
+}
+
+.Hotspot:focus {
+  border: 2px solid rgb(0, 128, 200);
+  height: 20px;
+  outline: none;
+  width: 32px;
+}
+
+@media screen and (min-width: 768px) {
+    .Hotspot{
+     visibility: visible;
+    }
+  }
+
+.HotspotAnnotation {
+  visibility: hidden;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.8);
+  display: block;
+  font-family: Futura, Helvetica Neue, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  left: calc(100% + 1em);
+  max-width: 200px;
+  overflow-wrap: break-word;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 50%;
+  width: max-content;
+  text-align: left;
+}
+
+.HotspotAnnotation p {
+  color: #333;
+  line-height: 22px;
+  font-weight: 300;
+}
+
+.HotspotAnnotation h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+model-viewer::part(default-progress-bar) {
+  height: 30px;
+  background-color: #e89b36;
+}
+
+model-viewer::part(default-progress-mask) {
+  display: none;
+}
+
+.info-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+  div {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    img {
+      width: 50px;
+      max-width: 50%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      padding: 10px;
+
+    }
+}
+
+}
+
+//tablet modole viwear//
+@media screen and (min-width: 768px) {
+model-viewer {
+  width: auto;
+    max-width: 50%;
+    height: 900px;
+}
+
+.info-boxes{
+  visibility: hidden;
+  display: none;
+}
+    
+}
+ //tablet//
+@media screen and (min-width: 768px) {
+  .nav-header {
+    padding: 20px 40px;
+  }
+  #hero img {
+    width: 100%;
+  }
+}
+
+div {
+ margin-bottom: 0.5em;
+ img {
+   margin-right: 1em;
+   width: 50%;
+ }
+}
